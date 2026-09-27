@@ -1,0 +1,18 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table.taks {
+    width: 400px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+td.button-create-task {
+    border: none; 
+}
+
