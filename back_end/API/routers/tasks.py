@@ -1,4 +1,6 @@
-from ...database.commandsDB import query_tasks 
+from datetime import datetime
+
+from ...database.commandsDB import query_tasks, insert_newTask
 
 async def get_tasks() -> list:
     tasks = await query_tasks()
@@ -14,3 +16,6 @@ async def get_tasks() -> list:
     return task_list
    
 
+async def create_task(descr_task: str, datetime_task: str):
+    date_time = datetime.strptime(datetime_task, '%Y-%m-%d %H:%M')
+    await insert_newTask(new_taskDescr=descr_task, new_taskDatetime=date_time)
