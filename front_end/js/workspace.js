@@ -1,6 +1,6 @@
 import { get_tasks } from "./request_manager.js";
 
-const table = document.getElementById('table');
+const task_table = document.getElementById('task_table');
 const list_tasks = await get_tasks();
 
 for (const task of list_tasks){
@@ -12,5 +12,5 @@ for (const task of list_tasks){
     <td>${task.date}</td>
     `;
 
-    table.appendChild(new_line);
+    task_table.appendChild(new_line);
 }

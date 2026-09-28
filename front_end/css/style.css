@@ -2,7 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-table.taks {
+table {
     width: 400px;
     border-collapse: collapse;
 }
@@ -12,7 +12,7 @@ td {
     padding: 8px;
 }
 
-td.button-create-task {
-    border: none; 
+.view_task {
+    display: flex;
+    justify-content: center;
 }
-
