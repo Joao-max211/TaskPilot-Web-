@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from .routers.tasks import get_tasks, create_task
+from .routers.tasks import get_tasks, create_task, update_task
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 
@@ -19,9 +19,13 @@ def main():
     async def list_tasks():
         return await get_tasks()
 
-    @app.get('/tasks/new_task/')
+    @app.post('/tasks/new_task/')
     async def add_task(descr: str, date_time: str):
         return await create_task(descr_task=descr, datetime_task=date_time)
+
+    @app.put('/tasks/{task_id}/')
+    async def mark_task(task_id:str, done:bool):
+        await update_task(task_id, done)
     
     return app
 if __name__ == '__main__':
